@@ -18,7 +18,7 @@ const UserData = ({children}) => {
     }
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth,(currentUser)=>{
-            if(currentUser){
+            if(currentUser.emailVerified){
                 console.log(currentUser);
                 setUser(currentUser);
                 setLoading(false);

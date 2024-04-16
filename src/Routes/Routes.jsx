@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import NewsDetails from "../Pages/NewsDetails/NewsDetails";
 import PrivateRoute from "./PrivateRoute";
+import Contact from "../Pages/Contact/Contact";
+import About from "../Pages/About/About";
 
 
 const router=createBrowserRouter([
@@ -39,6 +41,15 @@ const router=createBrowserRouter([
             {
                 path:'/news-details/:id',
                 element:<PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
+            },
+            {
+                path:'/contact',
+                element:<Contact></Contact>
+
+            },
+            {
+                path:'/about',
+                element:<About></About>
             }
         ]
     }

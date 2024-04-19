@@ -6,9 +6,8 @@ import PropTypes from 'prop-types';
 const PrivateRoute = ({children}) => {
     const {user,loading}=useContext(UserContext);
     const {pathname}=useLocation();
-    console.log(pathname);
     if(loading){
-        return <div className="mt-32 text-center"><span className="loading loading-spinner loading-lg text-error"></span>
+        return <div className="mt-32 text-center"><span className="loading loading-dots text-warning loading-lg"></span>
         </div>
     }
     else if(user?.emailVerified===true){

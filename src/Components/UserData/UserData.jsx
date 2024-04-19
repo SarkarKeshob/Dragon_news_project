@@ -17,9 +17,9 @@ const UserData = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password);
     }
     useEffect(()=>{
+        setLoading(true)
         const unSubscribe=onAuthStateChanged(auth,(currentUser)=>{
-            if(currentUser.emailVerified){
-                console.log(currentUser);
+            if(currentUser){
                 setUser(currentUser);
                 setLoading(false);
             }
@@ -30,6 +30,7 @@ const UserData = ({children}) => {
         })
         return ()=>{
             unSubscribe();
+            setLoading(false)
         }
 
     },[]);

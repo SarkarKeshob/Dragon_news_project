@@ -4,6 +4,7 @@ import RightSidebar from "../Home/RIghtSidebar/RightSidebar";
 import { useParams } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import Navbar from "../../Components/Shared/Navbar/Navbar";
+import Comments from "../../Components/Shared/Comments/Comments";
 
 
 
@@ -37,6 +38,10 @@ const NewsDetails = () => {
                             </figure>
                             <h1 className="text-xl font-bold text-slate-800">{newsDetails[0].title}</h1>
                             <p className="text-lg text-slate-500">{newsDetails[0].details}</p>
+
+                            <div>
+                                <Comments postId={id}></Comments>
+                            </div>
                             <button className="btn btn-info p-4 w-fit text-white"> <BsArrowLeft /> All news in  this category</button>
 
                         </div>
